@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import com.learning.practice.comparator.Student;
 
-public class StudentObjectSort {
+public class StudentObjectSort extends Object {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

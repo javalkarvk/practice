@@ -1,7 +1,6 @@
-package com.learning.practice.comparator;
+package com.learning.practice.java_8_features.streams;
 
 public class Student {
-	Integer a;
 	int rollNo;
 	String name;
 	int age;
@@ -36,18 +35,7 @@ public class Student {
 		this.age = age;
 	}
 	
-//	@Override
-//	public boolean equals(final Object s) {
-//		return this.name.equals(((Student) s).name);
-//	}
-	
 	public String toString() {
-		return this.name;
+		return this.rollNo+":"+this.name+":"+this.age;
 	}
-	
-//	@Override
-//	public int hashCode() {
-//		return this.name.hashCode();
-//	}
-	
 }

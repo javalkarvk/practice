@@ -20,6 +20,7 @@ public class StudentNameOccurence {
     System.out.println(l2);
     
     List<Integer> intList = Arrays.asList(1,4,5,6,1,2,4);
+    intList.stream().map(i->i).forEach(i->System.out.println("Result "+i));
     List<Integer> intListResult = intList.stream().distinct().collect(Collectors.toList());
     System.out.println(intListResult);
     List<Integer> intListResultSort = intList.stream().distinct().sorted().collect(Collectors.toList());
@@ -41,6 +42,7 @@ public class StudentNameOccurence {
     
     List<Student> studentList = List.of(new Student(2,"ABC",9),new Student(1,"ABC",10),new Student(4,"ABC",8),new Student(3,"ABC",9));
     List<Student> studentList2 = List.of(new Student(5,"ABC",9),new Student(6,"ABC",7),new Student(7,"ABC",6),new Student(6,"ABC",5));
+    studentList2.stream().mapToInt(Student::getAge);
     List<Student> sl3 = studentList.stream().sorted((s1,s2)->{return s1.getRollNo() < s2.getRollNo()?-1:s1.getRollNo()==s2.getRollNo()?0:-1;}).collect(Collectors.toList());
     List<Student> sl4 = studentList.stream().sorted(Comparator.comparing(Student::getRollNo).reversed()).collect(Collectors.toList());
     System.out.println(sl4);
@@ -54,5 +56,14 @@ public class StudentNameOccurence {
     System.out.println(sl6);
     Map<String, Long> m1 = studentList.stream().collect(Collectors.groupingBy(Student::getName, Collectors.counting()));
     m1.forEach((k,v)->System.out.println(k+":"+v));
+    
+    List<Integer> list2 = Arrays.asList(1,4,2,4,3,7,8,12,23,22);
+    List<Integer> list2Sorted = list2.stream().sorted().collect(Collectors.toList());
+    System.out.println(list2Sorted);
+    int lastElement = list2Sorted.stream().skip(list2.stream().count()-1).findFirst().get();
+    System.out.println(lastElement);
+    
+//    List<Student> distinctStudent = studentList.stream().filter(s->!s.add()).collect(Collectors.toList());
+//    System.out.println(distinctStudent);
   }
 }

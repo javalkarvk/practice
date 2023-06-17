@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author javal
- *
- */
-module Practice {
-}
